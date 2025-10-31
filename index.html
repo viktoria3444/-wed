@@ -1,0 +1,630 @@
+<!-- Paste this into the HTML panel in CodePen -->
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wedding Moments — Demo SPA</title>
+  <!-- Google Fonts (CodePen will load this) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Note: paste CSS into the CSS panel, JS into the JS panel -->
+</head>
+<body>
+  <!-- SITE WRAPPER -->
+  <div class="site">
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader" role="banner">
+      <div class="container header-inner">
+        <a class="logo" data-nav="home" href="#" aria-label="Wedding Moments home">
+          <!-- inline SVG logo -->
+          <svg viewBox="0 0 220 60" class="logo-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="lg" x1="0" x2="1">
+                <stop offset="0%" stop-color="#fff1f0"/>
+                <stop offset="100%" stop-color="#fffaf6"/>
+              </linearGradient>
+            </defs>
+            <rect width="220" height="60" rx="10" fill="url(#lg)"/>
+            <text x="18" y="38" font-family="Playfair Display, serif" font-size="20" fill="#9c6b6b">Wedding</text>
+            <text x="120" y="38" font-family="Poppins, sans-serif" font-size="12" fill="#7b6f6f">Moments</text>
+            <g transform="translate(180,10)" fill="#d6a6a6">
+              <path d="M10 0 C6 6, 0 6, 0 12 C0 20, 10 24, 10 24 C10 24, 20 20, 20 12 C20 6, 14 6, 10 0 z"/>
+            </g>
+          </svg>
+        </a>
+
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">☰</button>
+          <ul class="nav-list" id="navList">
+            <li class="nav-item has-dropdown">
+              <a href="#" class="nav-link" data-nav="home">Home <span class="chev">▾</span></a>
+              <ul class="dropdown">
+                <li><a href="#" data-nav="about">Про нас</a></li>
+                <li><a href="#" data-nav="team">Команда</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link" data-nav="services">Services</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-nav="portfolio">Portfolio</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-nav="team">Team</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-nav="reviews">Reviews</a></li>
+            <li class="nav-item"><a href="#" class="nav-link cta" data-nav="contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN (sections as pages) -->
+    <main id="mainContent">
+
+      <!-- HERO / HOME -->
+      <section id="home" class="page page-home active">
+        <div class="hero container">
+          <div class="hero-inner">
+            <div class="hero-text">
+              <h1>Створюємо ваш ідеальний день з любов'ю</h1>
+              <p class="lead">Ми організовуємо весілля: концепція, декор, флористика, координація дня. Ніжно, зі смаком і увагою до деталей.</p>
+              <div class="hero-cta">
+                <button class="btn btn-primary" data-nav="contact">Забронювати консультацію</button>
+                <button class="btn btn-ghost" data-nav="services">Наші послуги</button>
+              </div>
+            </div>
+            <div class="hero-image">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop" alt="wedding couple">
+            </div>
+          </div>
+        </div>
+
+        <div class="container section about-section">
+          <h2>Про нас</h2>
+          <p class="muted">Ми починали як двоє друзів, що любили красу. Перший івент в саду дав нам крила — і тепер ми команда професіоналів.</p>
+
+          <div class="founders small-gap">
+            <article class="card founder">
+              <img src="https://images.unsplash.com/photo-1545996124-0a8b63be8f9b?q=80&w=800&auto=format&fit=crop" alt="founder one">
+              <h3>Олена — Засновниця</h3>
+              <p>Декораторка та стилістка. Любить пастельні композиції.</p>
+            </article>
+
+            <article class="card founder">
+              <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop" alt="founder two">
+              <h3>Іван — Керівник проектів</h3>
+              <p>Координує процеси, щоб ваш день пройшов бездоганно.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="container section services-preview large-gap">
+          <h2>Наші послуги</h2>
+          <p class="muted">Проведення заходу під ключ: планування, декор, фотографія, координація.</p>
+
+          <div class="cards small-gap">
+            <div class="card">
+              <h3>Повна організація</h3>
+              <p>Планування бюджету, підбір локації, координація постачальників.</p>
+            </div>
+            <div class="card">
+              <h3>Декор та флористика</h3>
+              <p>Індивідуальні композиції та інсталяції під вашу тему.</p>
+            </div>
+            <div class="card">
+              <h3>Фото & Відео</h3>
+              <p>Професійні фотографи та відеографи для збереження спогадів.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container section testimonials small-gap">
+          <h2>Відгуки</h2>
+          <p class="muted">Кілька щирих слів від пар, з якими ми працювали.</p>
+
+          <div class="testimonial-grid small-gap">
+            <article class="testimonial card">
+              <div class="meta">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="client">
+                <div><strong>Марія & Андрій</strong><span class="date muted">Травень 2024</span></div>
+              </div>
+              <p class="quote">"Вони зробили наш день ідеальним — безтурботно та красиво."</p>
+              <div class="stars">★★★★★</div>
+            </article>
+
+            <article class="testimonial card">
+              <div class="meta">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="client">
+                <div><strong>Оксана & Сергій</strong><span class="date muted">Червень 2024</span></div>
+              </div>
+              <p class="quote">"Професіонали своєї справи — все було як у казці."</p>
+              <div class="stars">★★★★★</div>
+            </article>
+          </div>
+
+          <div class="see-all">
+            <button class="btn btn-outline" data-nav="reviews">Дивитися всі відгуки</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="page page-services">
+        <div class="container section">
+          <h1>Наші послуги</h1>
+          <p class="muted">Детальний перелік і приклади.</p>
+
+          <div class="service-grid small-gap">
+            <article class="card">
+              <h3>Повна організація</h3>
+              <p>Планування, таймінг, бюджет, підбір підрядників.</p>
+            </article>
+            <article class="card">
+              <h3>Оформлення та декор</h3>
+              <p>Оформлення з урахуванням вашої теми та побажань.</p>
+            </article>
+            <article class="card">
+              <h3>Флористика</h3>
+              <p>Букети, композиції, інсталяції.</p>
+            </article>
+            <article class="card">
+              <h3>Координація дня</h3>
+              <p>Координатор на локації, контроль таймінгу.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section id="portfolio" class="page page-portfolio">
+        <div class="container section">
+          <h1>Наші роботи</h1>
+          <p class="muted">Погортайте наші улюблені проекти.</p>
+
+          <div class="gallery-grid small-gap">
+            <figure><img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?q=80&w=900&auto=format&fit=crop" alt="decor"></figure>
+            <figure><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=900&auto=format&fit=crop" alt="ceremony"></figure>
+            <figure><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=900&auto=format&fit=crop" alt="bouquet"></figure>
+            <figure><img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=900&auto=format&fit=crop" alt="tables"></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM -->
+      <section id="team" class="page page-team">
+        <div class="container section">
+          <h1>Наша команда</h1>
+          <p class="muted">Люди, які творять свята.</p>
+
+          <div class="team-grid small-gap">
+            <article class="card team-member">
+              <img src="https://images.unsplash.com/photo-1545996124-0a8b63be8f9b?q=80&w=600&auto=format&fit=crop" alt="member">
+              <h3>Олена</h3>
+              <p class="muted small">Головна декораторка · Улюблена квітка: піони</p>
+            </article>
+
+            <article class="card team-member">
+              <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=600&auto=format&fit=crop" alt="member">
+              <h3>Іван</h3>
+              <p class="muted small">Керівник проектів · Улюблений стиль: бохо</p>
+            </article>
+
+            <article class="card team-member">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="member">
+              <h3>Марія</h3>
+              <p class="muted small">Флористка · Улюблена квітка: троянди</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section id="reviews" class="page page-reviews">
+        <div class="container section">
+          <h1>Відгуки</h1>
+          <p class="muted">Прочитайте або залиште свій відгук.</p>
+
+          <div class="reviews-wrap small-gap">
+            <div class="reviews-list" id="reviewsList">
+              <!-- populated by JS -->
+            </div>
+
+            <aside class="review-form card">
+              <h3>Залишити відгук</h3>
+              <form id="reviewForm">
+                <label>Ім'я <input type="text" name="name" required></label>
+                <label>Email <input type="email" name="email"></label>
+                <label>Оцінка
+                  <div class="rating" id="rating">
+                    <button type="button" class="star" data-value="1">★</button>
+                    <button type="button" class="star" data-value="2">★</button>
+                    <button type="button" class="star" data-value="3">★</button>
+                    <button type="button" class="star" data-value="4">★</button>
+                    <button type="button" class="star" data-value="5">★</button>
+                  </div>
+                </label>
+                <label>Повідомлення <textarea name="message" rows="4" required></textarea></label>
+                <input type="hidden" name="ratingValue" id="ratingValue" value="5">
+                <button class="btn btn-primary" type="submit">Надіслати</button>
+              </form>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="page page-contact">
+        <div class="container section">
+          <h1>Contact</h1>
+          <p class="muted">Зв'яжіться з нами — ми підготуємо індивідуальну пропозицію.</p>
+
+          <div class="contact-grid small-gap">
+            <form class="card contact-form" id="contactForm">
+              <label>Ім'я <input type="text" name="name" required></label>
+              <label>Email <input type="email" name="email" required></label>
+              <label>Телефон <input type="tel" name="phone"></label>
+              <label>Повідомлення <textarea name="message" rows="5" required></textarea></label>
+              <button class="btn btn-primary" type="submit">Надіслати</button>
+            </form>
+
+            <aside class="card contact-info">
+              <h3>Наші контакти</h3>
+              <p><strong>Email:</strong> <a href="mailto:hello@weddingmoments.com">hello@weddingmoments.com</a></p>
+              <p><strong>Телефон:</strong> <a href="tel:+380501234567">+38 (050) 123-45-67</a></p>
+              <p><strong>Instagram:</strong> <a href="#" target="_blank">@weddingmoments</a></p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a class="logo logo-footer" data-nav="home" href="#">
+            <!-- mini logo -->
+            <svg viewBox="0 0 200 60" class="logo-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="200" height="60" rx="12" fill="#fff0f0" />
+              <text x="18" y="38" font-family="Playfair Display, serif" font-size="16" fill="#8b6b6b">Wedding</text>
+              <text x="105" y="38" font-family="Poppins, sans-serif" font-size="12" fill="#7b6f6f">Moments</text>
+            </svg>
+          </a>
+          <p class="muted">Copyright © 2025 Wedding Moments</p>
+        </div>
+
+        <div class="footer-contacts">
+          <p><strong>Email</strong><br><a href="mailto:hello@weddingmoments.com">hello@weddingmoments.com</a></p>
+          <p><strong>Instagram</strong><br><a href="#">@weddingmoments</a></p>
+          <p><strong>Телефон</strong><br><a href="tel:+380501234567">+38 (050) 123-45-67</a></p>
+        </div>
+
+        <div class="footer-links">
+          <nav>
+            <a href="#" data-nav="home">Home</a>
+            <a href="#" data-nav="services">Services</a>
+            <a href="#" data-nav="portfolio">Portfolio</a>
+            <a href="#" data-nav="team">Team</a>
+            <a href="#" data-nav="reviews">Reviews</a>
+            <a href="#" data-nav="contact">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- End body. Paste JS into JS panel -->
+</body>
+</html>
+<!-- Paste this into the HTML panel in CodePen -->
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wedding Moments — Demo SPA</title>
+  <!-- Google Fonts (CodePen will load this) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Note: paste CSS into the CSS panel, JS into the JS panel -->
+</head>
+<body>
+  <!-- SITE WRAPPER -->
+  <div class="site">
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader" role="banner">
+      <div class="container header-inner">
+        <a class="logo" data-nav="home" href="#" aria-label="Wedding Moments home">
+          <!-- inline SVG logo -->
+          <svg viewBox="0 0 220 60" class="logo-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="lg" x1="0" x2="1">
+                <stop offset="0%" stop-color="#fff1f0"/>
+                <stop offset="100%" stop-color="#fffaf6"/>
+              </linearGradient>
+            </defs>
+            <rect width="220" height="60" rx="10" fill="url(#lg)"/>
+            <text x="18" y="38" font-family="Playfair Display, serif" font-size="20" fill="#9c6b6b">Wedding</text>
+            <text x="120" y="38" font-family="Poppins, sans-serif" font-size="12" fill="#7b6f6f">Moments</text>
+            <g transform="translate(180,10)" fill="#d6a6a6">
+              <path d="M10 0 C6 6, 0 6, 0 12 C0 20, 10 24, 10 24 C10 24, 20 20, 20 12 C20 6, 14 6, 10 0 z"/>
+            </g>
+          </svg>
+        </a>
+
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">☰</button>
+          <ul class="nav-list" id="navList">
+            <li class="nav-item has-dropdown">
+              <a href="#" class="nav-link" data-nav="home">Home <span class="chev">▾</span></a>
+              <ul class="dropdown">
+                <li><a href="#" data-nav="about">Про нас</a></li>
+                <li><a href="#" data-nav="team">Команда</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link" data-nav="services">Services</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-nav="portfolio">Portfolio</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-nav="team">Team</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-nav="reviews">Reviews</a></li>
+            <li class="nav-item"><a href="#" class="nav-link cta" data-nav="contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN (sections as pages) -->
+    <main id="mainContent">
+
+      <!-- HERO / HOME -->
+      <section id="home" class="page page-home active">
+        <div class="hero container">
+          <div class="hero-inner">
+            <div class="hero-text">
+              <h1>Створюємо ваш ідеальний день з любов'ю</h1>
+              <p class="lead">Ми організовуємо весілля: концепція, декор, флористика, координація дня. Ніжно, зі смаком і увагою до деталей.</p>
+              <div class="hero-cta">
+                <button class="btn btn-primary" data-nav="contact">Забронювати консультацію</button>
+                <button class="btn btn-ghost" data-nav="services">Наші послуги</button>
+              </div>
+            </div>
+            <div class="hero-image">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop" alt="wedding couple">
+            </div>
+          </div>
+        </div>
+
+        <div class="container section about-section">
+          <h2>Про нас</h2>
+          <p class="muted">Ми починали як двоє друзів, що любили красу. Перший івент в саду дав нам крила — і тепер ми команда професіоналів.</p>
+
+          <div class="founders small-gap">
+            <article class="card founder">
+              <img src="https://images.unsplash.com/photo-1545996124-0a8b63be8f9b?q=80&w=800&auto=format&fit=crop" alt="founder one">
+              <h3>Олена — Засновниця</h3>
+              <p>Декораторка та стилістка. Любить пастельні композиції.</p>
+            </article>
+
+            <article class="card founder">
+              <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop" alt="founder two">
+              <h3>Іван — Керівник проектів</h3>
+              <p>Координує процеси, щоб ваш день пройшов бездоганно.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="container section services-preview large-gap">
+          <h2>Наші послуги</h2>
+          <p class="muted">Проведення заходу під ключ: планування, декор, фотографія, координація.</p>
+
+          <div class="cards small-gap">
+            <div class="card">
+              <h3>Повна організація</h3>
+              <p>Планування бюджету, підбір локації, координація постачальників.</p>
+            </div>
+            <div class="card">
+              <h3>Декор та флористика</h3>
+              <p>Індивідуальні композиції та інсталяції під вашу тему.</p>
+            </div>
+            <div class="card">
+              <h3>Фото & Відео</h3>
+              <p>Професійні фотографи та відеографи для збереження спогадів.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container section testimonials small-gap">
+          <h2>Відгуки</h2>
+          <p class="muted">Кілька щирих слів від пар, з якими ми працювали.</p>
+
+          <div class="testimonial-grid small-gap">
+            <article class="testimonial card">
+              <div class="meta">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="client">
+                <div><strong>Марія & Андрій</strong><span class="date muted">Травень 2024</span></div>
+              </div>
+              <p class="quote">"Вони зробили наш день ідеальним — безтурботно та красиво."</p>
+              <div class="stars">★★★★★</div>
+            </article>
+
+            <article class="testimonial card">
+              <div class="meta">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="client">
+                <div><strong>Оксана & Сергій</strong><span class="date muted">Червень 2024</span></div>
+              </div>
+              <p class="quote">"Професіонали своєї справи — все було як у казці."</p>
+              <div class="stars">★★★★★</div>
+            </article>
+          </div>
+
+          <div class="see-all">
+            <button class="btn btn-outline" data-nav="reviews">Дивитися всі відгуки</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="page page-services">
+        <div class="container section">
+          <h1>Наші послуги</h1>
+          <p class="muted">Детальний перелік і приклади.</p>
+
+          <div class="service-grid small-gap">
+            <article class="card">
+              <h3>Повна організація</h3>
+              <p>Планування, таймінг, бюджет, підбір підрядників.</p>
+            </article>
+            <article class="card">
+              <h3>Оформлення та декор</h3>
+              <p>Оформлення з урахуванням вашої теми та побажань.</p>
+            </article>
+            <article class="card">
+              <h3>Флористика</h3>
+              <p>Букети, композиції, інсталяції.</p>
+            </article>
+            <article class="card">
+              <h3>Координація дня</h3>
+              <p>Координатор на локації, контроль таймінгу.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section id="portfolio" class="page page-portfolio">
+        <div class="container section">
+          <h1>Наші роботи</h1>
+          <p class="muted">Погортайте наші улюблені проекти.</p>
+
+          <div class="gallery-grid small-gap">
+            <figure><img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?q=80&w=900&auto=format&fit=crop" alt="decor"></figure>
+            <figure><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=900&auto=format&fit=crop" alt="ceremony"></figure>
+            <figure><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=900&auto=format&fit=crop" alt="bouquet"></figure>
+            <figure><img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=900&auto=format&fit=crop" alt="tables"></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM -->
+      <section id="team" class="page page-team">
+        <div class="container section">
+          <h1>Наша команда</h1>
+          <p class="muted">Люди, які творять свята.</p>
+
+          <div class="team-grid small-gap">
+            <article class="card team-member">
+              <img src="https://images.unsplash.com/photo-1545996124-0a8b63be8f9b?q=80&w=600&auto=format&fit=crop" alt="member">
+              <h3>Олена</h3>
+              <p class="muted small">Головна декораторка · Улюблена квітка: піони</p>
+            </article>
+
+            <article class="card team-member">
+              <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=600&auto=format&fit=crop" alt="member">
+              <h3>Іван</h3>
+              <p class="muted small">Керівник проектів · Улюблений стиль: бохо</p>
+            </article>
+
+            <article class="card team-member">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="member">
+              <h3>Марія</h3>
+              <p class="muted small">Флористка · Улюблена квітка: троянди</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section id="reviews" class="page page-reviews">
+        <div class="container section">
+          <h1>Відгуки</h1>
+          <p class="muted">Прочитайте або залиште свій відгук.</p>
+
+          <div class="reviews-wrap small-gap">
+            <div class="reviews-list" id="reviewsList">
+              <!-- populated by JS -->
+            </div>
+
+            <aside class="review-form card">
+              <h3>Залишити відгук</h3>
+              <form id="reviewForm">
+                <label>Ім'я <input type="text" name="name" required></label>
+                <label>Email <input type="email" name="email"></label>
+                <label>Оцінка
+                  <div class="rating" id="rating">
+                    <button type="button" class="star" data-value="1">★</button>
+                    <button type="button" class="star" data-value="2">★</button>
+                    <button type="button" class="star" data-value="3">★</button>
+                    <button type="button" class="star" data-value="4">★</button>
+                    <button type="button" class="star" data-value="5">★</button>
+                  </div>
+                </label>
+                <label>Повідомлення <textarea name="message" rows="4" required></textarea></label>
+                <input type="hidden" name="ratingValue" id="ratingValue" value="5">
+                <button class="btn btn-primary" type="submit">Надіслати</button>
+              </form>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="page page-contact">
+        <div class="container section">
+          <h1>Contact</h1>
+          <p class="muted">Зв'яжіться з нами — ми підготуємо індивідуальну пропозицію.</p>
+
+          <div class="contact-grid small-gap">
+            <form class="card contact-form" id="contactForm">
+              <label>Ім'я <input type="text" name="name" required></label>
+              <label>Email <input type="email" name="email" required></label>
+              <label>Телефон <input type="tel" name="phone"></label>
+              <label>Повідомлення <textarea name="message" rows="5" required></textarea></label>
+              <button class="btn btn-primary" type="submit">Надіслати</button>
+            </form>
+
+            <aside class="card contact-info">
+              <h3>Наші контакти</h3>
+              <p><strong>Email:</strong> <a href="mailto:hello@weddingmoments.com">hello@weddingmoments.com</a></p>
+              <p><strong>Телефон:</strong> <a href="tel:+380501234567">+38 (050) 123-45-67</a></p>
+              <p><strong>Instagram:</strong> <a href="#" target="_blank">@weddingmoments</a></p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a class="logo logo-footer" data-nav="home" href="#">
+            <!-- mini logo -->
+            <svg viewBox="0 0 200 60" class="logo-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="200" height="60" rx="12" fill="#fff0f0" />
+              <text x="18" y="38" font-family="Playfair Display, serif" font-size="16" fill="#8b6b6b">Wedding</text>
+              <text x="105" y="38" font-family="Poppins, sans-serif" font-size="12" fill="#7b6f6f">Moments</text>
+            </svg>
+          </a>
+          <p class="muted">Copyright © 2025 Wedding Moments</p>
+        </div>
+
+        <div class="footer-contacts">
+          <p><strong>Email</strong><br><a href="mailto:hello@weddingmoments.com">hello@weddingmoments.com</a></p>
+          <p><strong>Instagram</strong><br><a href="#">@weddingmoments</a></p>
+          <p><strong>Телефон</strong><br><a href="tel:+380501234567">+38 (050) 123-45-67</a></p>
+        </div>
+
+        <div class="footer-links">
+          <nav>
+            <a href="#" data-nav="home">Home</a>
+            <a href="#" data-nav="services">Services</a>
+            <a href="#" data-nav="portfolio">Portfolio</a>
+            <a href="#" data-nav="team">Team</a>
+            <a href="#" data-nav="reviews">Reviews</a>
+            <a href="#" data-nav="contact">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- End body. Paste JS into JS panel -->
+</body>
+</html>
