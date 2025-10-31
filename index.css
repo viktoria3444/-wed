@@ -1,0 +1,136 @@
+/* Paste this into the CSS panel in CodePen */
+
+/* FILE: style.css */
+/* Variables and spacing rules */
+:root{
+  --bg: #fffaf8;
+  --muted: #7b6f6f;
+  --accent: #f3d7d7;    /* pastel pink */
+  --accent-dark: #b87b7b; /* darker CTA */
+  --card: #ffffff;
+  --gap-small: 5rem;   /* after texts/photos */
+  --gap-large: 13rem;  /* before new major headings */
+  --max-width: 1100px;
+}
+
+/* Basic reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background:var(--bg);
+  color:#3b3b3b;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+}
+.container{max-width:var(--max-width);margin:0 auto;padding:2rem}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:80;
+  background:linear-gradient(rgba(255,255,255,0.66), rgba(255,255,255,0.3));
+  backdrop-filter: blur(6px);
+  transition: box-shadow .18s ease, transform .18s ease;
+}
+.site-header.scrolled{box-shadow:0 6px 30px rgba(0,0,0,0.08); transform:translateY(0)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.5rem 0}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo-svg{width:140px;height:auto}
+
+/* Nav */
+.nav{position:relative}
+.nav-toggle{display:none;background:none;border:none;font-size:1.15rem;padding:.4rem}
+.nav-list{list-style:none;margin:0;display:flex;gap:1rem;align-items:center;padding:0}
+.nav-link{text-decoration:none;color:var(--muted);padding:.5rem .75rem;border-radius:8px;cursor:pointer}
+.nav-link:hover{background:rgba(255,255,255,0.6)}
+.nav .cta{background:var(--accent-dark);color:white;padding:.6rem .9rem;border-radius:10px}
+
+/* dropdown */
+.has-dropdown{position:relative}
+.dropdown{position:absolute;left:0;top:calc(100% + 8px);background:var(--card);box-shadow:0 8px 24px rgba(0,0,0,0.08);padding:0.6rem;border-radius:10px;display:none}
+.has-dropdown:hover .dropdown{display:block}
+.dropdown a{display:block;padding:.4rem 1rem;color:var(--muted);white-space:nowrap}
+
+/* Hero */
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;padding:3rem 0}
+.hero h1{font-family:'Playfair Display', serif;font-size:2.6rem;margin:0 0 1rem}
+.lead{margin-bottom:var(--gap-small)}
+.hero-image img{width:100%;height:420px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+
+/* Buttons */
+.btn{display:inline-block;text-decoration:none;border-radius:10px;padding:.6rem 1rem;border:0;cursor:pointer}
+.btn-primary{background:var(--accent-dark);color:white}
+.btn-ghost{background:transparent;border:1px solid rgba(120,90,90,0.08);color:var(--muted)}
+.btn-outline{background:transparent;border:2px dashed rgba(120,90,90,0.08);padding:.5rem 1rem}
+
+/* Sections */
+.section{padding:var(--gap-small) 0}
+.section h1, .section h2{font-family:'Playfair Display', serif;color:#3b3b3b}
+.section h2{font-size:1.9rem;margin:0 0 1rem}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+
+/* Cards & grids */
+.cards{display:flex;gap:1.25rem}
+.card{background:var(--card);padding:1.25rem;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.04);transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform:translateY(-6px)}
+.founders{display:flex;gap:1.25rem;margin-top:1rem}
+.founder img{width:100%;height:220px;object-fit:cover;border-radius:10px}
+.testimonial-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.testimonial .meta{display:flex;gap:0.8rem;align-items:center}
+.testimonial img{width:56px;height:56px;border-radius:50%;object-fit:cover}
+.stars{color:var(--accent-dark);margin-top:0.5rem}
+.see-all{margin-top:1rem}
+
+/* gallery / team */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.gallery-grid img{width:100%;height:260px;object-fit:cover;border-radius:10px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.team-member img{width:100%;height:260px;object-fit:cover;border-radius:10px}
+
+/* Reviews */
+.reviews-wrap{display:grid;grid-template-columns:2fr 1fr;gap:1.25rem}
+.reviews-list{display:flex;flex-direction:column;gap:1rem}
+.review .meta{display:flex;gap:0.8rem;align-items:center}
+.rating .star{background:transparent;border:none;font-size:1.4rem;cursor:pointer}
+.rating .star.active{color:var(--accent-dark);transform:scale(1.1)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:1.25rem}
+.contact-form label, .review-form label{display:block;margin-bottom:0.75rem}
+.contact-form input, .contact-form textarea, .review-form input, .review-form textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid #efe6e6}
+
+/* Footer */
+.site-footer{background:#fff;padding:2rem 0;margin-top:var(--gap-small)}
+.footer-inner{display:flex;gap:2rem;align-items:flex-start;justify-content:space-between}
+.footer-contacts a{text-decoration:none;color:var(--muted)}
+.footer-links nav a{display:inline-block;margin-right:1rem;color:var(--muted)}
+
+/* Responsive */
+@media (max-width:1000px){
+  .hero-inner{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .testimonial-grid{grid-template-columns:1fr}
+  .reviews-wrap{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:660px){
+  .nav-list{display:none;position:absolute;right:0;top:60px;background:var(--card);flex-direction:column;padding:1rem;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+  .nav-toggle{display:block}
+  .team-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .hero-image img{height:240px}
+}
+
+/* Page visibility (SPA) */
+.page{display:none;opacity:0;transform:translateY(6px);transition:opacity .25s ease, transform .25s ease}
+.page.active{display:block;opacity:1;transform:none}
+
+/* Utility spacing classes */
+.small-gap{margin-bottom:var(--gap-small)}
+.large-gap{margin-top:var(--gap-large)}
+
+/* Focus */
+.nav-link:focus, .btn:focus{outline:3px solid rgba(184,123,123,0.18);outline-offset:2px}
